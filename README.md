@@ -30,3 +30,38 @@ This is a simple command-line URL shortener built with Python using the `pyshort
 
 ```bash
 pip install pyshorteners
+```
+## 💡 Usage
+Run the script:
+
+python Link-Shortener.py
+Then enter a long URL like:
+
+en.wikipedia.org/wiki/Artificial_intelligence
+The script will output:
+
+Shortened link: https://tinyurl.com/xxxxx
+## 🛠 Code Example
+
+import pyshorteners
+
+try:
+    link = input("Enter the link: ").strip()
+
+    if not link.startswith("http://") and not link.startswith("https://"):
+        link = "https://" + link
+
+    shortener = pyshorteners.Shortener()
+    shortened_link = shortener.tinyurl.short(link)
+    print("Shortened link:", shortened_link)
+
+except Exception as e:
+    print("❌ Error shortening the URL:", e)
+## 📎 Example Links to Try
+https://en.wikipedia.org/wiki/Artificial_intelligence
+
+https://www.google.com
+
+https://github.com
+
+
